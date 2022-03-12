@@ -18,8 +18,8 @@ function connect_db()
     }
 }
 
+// エスケープ処理を行う関数
 function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
-

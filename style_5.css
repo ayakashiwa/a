@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/*共通部分*/
+html{
+    font-size: 100%;
+}
+
+body{
+    background-color: white;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Shippori Mincho B1', serif;
+    line-height: 1.7;
+    color: #432;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    width: 210px;
+    margin-top: 14px;
+}
+
+.main-nav{
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+    padding-left: 900px;
+
+}
+.main-nav li{
+    margin-right: 36px;
+    display: inline;
+}
+.main-nav a{
+    color: white;
+}
+.main-nav a:hover{
+    color: #432;
+}
+/*フッター*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.875rem;
+}
+/*記事部分*/
+article{
+    width: 74%;
+    padding-left:200px;
+}
+
+/*サイドバー*/
+aside{
+    width: 22%;
+}
+.top-contents{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.sub-title{
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #ddd solid;
+    font-weight: normal;
+}
+aside p{
+    padding: 12px 10px;
+}
+.sub-menu{
+    margin-bottom: 60px;
+    list-style: none;
+}
+.sub-menu li{
+    border-bottom: 1px #ddd solid;
+}
+.sub-menu a{
+    color: #432;
+    padding: 10px;
+    display: block;
+}
+.sub-menu a:hover{
+    color: #ddd;
+}
+.post-title{
+    font-family: "Yu Mincho","YuMincho",selif;
+    font-size: 50px;
+    font-weight: normal;
+}
+.post-title{
+    margin-left: -12px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+article img{
+    margin-bottom: 20px;
+}
+article p{
+    margin-bottom: 1rem;
+}
+#top{
+    background-image: url(https://cdn.stocksnap.io/img-thumbs/960w/cloud-cloudscape_JIVEK8RVFD.jpg);
+    background-size: cover;
+    height: 200px;
+    margin-bottom: 40px;
+}
+#top .page-title{
+    text-align: center;
+}
+.page-title{
+    font-size: 30px;
+    font-family: 'Philosopher',serif;
+    font-weight: normal;
+    color: #fff;
+    padding-top: 20px;
+}
+.top-contents wrapper img{
+    height: 500px;
+    width: 800px;
+}
+.message{
+    font-size: 48px;
+}
+.kakko01 {
+	padding: 25px;
+	position: relative;
+    text-align: left;
+    font-size: 45px;
+}
+.kakko01::before, .kakko01::after {
+	content: '';
+	width: 25px;
+	height: 25px;
+	position: absolute;
+}
+.kakko01::before {
+	border-left: solid 2px #000000;
+	border-top: solid 2px #000000;
+	top: 0;
+	left: 0;
+}
+.kakko01::after {
+	border-right: solid 2px #000000;
+	border-bottom: solid 2px #000000;
+	bottom: 0;
+	right: 0;
+}
