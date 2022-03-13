@@ -121,6 +121,6 @@ article p{
     padding-top: 20px;
 }
 .top-contents wrapper img{
-    height: 500px;
-    width: 800px;
+    height: 50%;
+    width: 50%;
 }

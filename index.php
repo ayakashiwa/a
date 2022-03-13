@@ -30,7 +30,7 @@ $dbh = connect_db();
                 <ul class="main-nav">
                     <li><a href="news.php">お知らせ</a></li>
                     <li><a href="menu.php">作ったひと</a></li>
-                    <li><a href="contact.php">問い合わせ</a></li>
+                    <li><a href="contact.php">お問い合わせ</a></li>
                 </ul>
             </nav>
         </header>

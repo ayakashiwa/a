@@ -39,22 +39,11 @@ a{
 .main-nav a:hover{
     color: #432;
 }
-/*フッター*/
-footer{
-    background: #432;
-    text-align: center;
-    padding: 26px 0;
-}
-footer p{
-    color: #fff;
-    font-size: 0.875rem;
-}
 /*記事部分*/
 article{
     width: 74%;
     padding-left:200px;
 }
-
 /*サイドバー*/
 aside{
     width: 22%;
@@ -104,15 +93,6 @@ article img{
 article p{
     margin-bottom: 1rem;
 }
-#top{
-    background-image: url(https://cdn.stocksnap.io/img-thumbs/960w/cloud-cloudscape_JIVEK8RVFD.jpg);
-    background-size: cover;
-    height: 200px;
-    margin-bottom: 40px;
-}
-#top .page-title{
-    text-align: center;
-}
 .page-title{
     font-size: 30px;
     font-family: 'Philosopher',serif;
@@ -123,4 +103,46 @@ article p{
 .top-contents wrapper img{
     height: 500px;
     width: 800px;
+}
+/*フォーム*/
+form div{
+    margin-bottom: 14px;
+}
+label{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea{
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    max-width: 480px;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="email"]{
+    width: 100%;
+}
+textarea{
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+input[type="submit"]{
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 2;
+    background-color: ghostwhite;
+    width: 50px;
+}
+.wrapper img{
+    height: 350px;
+    width: 500px;
+    float: left;
 }

@@ -22,16 +22,18 @@ $dbh = connect_db();
 </head>
 
 <body>
-    <section class="wrap">
-        <h2 class="wrap-title">お知らせ</h2>
-        <img src="https://cdn.stocksnap.io/img-thumbs/280h/PFFWIMV292.jpg" alt="お知らせ写真">
-        <div class="infomation">
-            <ul>
-            <li>2022.3.13 アプリリリース！！！</li>
-            <p>ストレスを抱える人向けに、アプリをリリースしました！</p>
+    <div id="top" class="big-bg">
         </div>
-    </section>
-    <a href="index.php" class="btn return-btn">戻る</a>
+        <section class="wrap">
+            <h2 class="wrap-title">お知らせ</h2>
+            <img src="https://cdn.stocksnap.io/img-thumbs/280h/PFFWIMV292.jpg" alt="お知らせ写真">
+            <div class="infomation">
+                <ul>
+                    <li>2022.3.13 アプリリリース！！！</li>
+                    <p>ストレスを抱える人向けに、アプリをリリースしました！</p>
+            </div>
+        </section>
+        <a href="index.php" class="btn return-btn">戻る</a>
 </body>
 
 </html>

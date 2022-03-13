@@ -7,22 +7,30 @@ $dbh = connect_db();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $id = filter_input(INPUT_GET, 'id');
-    // 空白の場合一覧表示
-    if ($id == '') {
-        // パラメータが何も渡されなかった時の処理
-        $sql = 'SELECT * FROM admire';
-        // プリペアドステートメントの準備
-        $stmt = $dbh->prepare($sql);
-    } else {
-        // キーワードをdescriptionから抽出する
-        $sql = 'SELECT * FROM admire WHERE id =' . $id;
-        // プリペアドステートメントの準備
-        $stmt = $dbh->prepare($sql);
-    }
+
+    // パラメータが何も渡されなかった時の処理
+    $sql = 'SELECT * FROM admire';
+    // プリペアドステートメントの準備
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+    $admires = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $sql = <<<EOM
+    SELECT
+        *
+    FROM
+        admire
+    WHERE
+        id = :id
+    EOM;
+
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $admire = $stmt->fetch(PDO::FETCH_ASSOC);
     //プリペアドステートメントの実行
     $stmt->execute();
     // 結果の受け取り
-    $admire = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
 
@@ -50,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 <ul class="main-nav">
                     <li><a href="news.php">お知らせ</a></li>
                     <li><a href="menu.php">作ったひと</a></li>
-                    <li><a href="contact.php">問い合わせ</a></li>
+                    <li><a href="contact.php">お問い合わせ</a></li>
                 </ul>
             </nav>
         </header>
@@ -59,38 +67,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <article>
             <header class="post-info">
                 <h2 class="post-title">あなたへのメッセージ</h2>
-                <?php foreach ($admire as $admires) : ?>
-                    <p class="kakko01">
-                        <?= h($admires['message']) ?>
-                    </p>
-                <?php endforeach; ?>
+                <p class="kakko01">
+                    <?= h($admire['message']) ?>
+                </p>
             </header>
         </article>
         <aside>
             <h3 class="sub-title">カテゴリー</h3>
             <ul class="sub-menu">
-                <li><a href="result.php?id=1">仕事疲れた</a></li>
-                <li><a href="result.php?id=2">上司に腹が立つ</a></li>
-                <li><a href="result.php?id=3">使えないなと言われた</a></li>
-                <li><a href="result.php?id=4">やっていく自信がない</a></li>
-                <li><a href="result.php?id=5">仕事中に寝てしまった</a></li>
-                <li><a href="result.php?id=6">仕事に行きたくない</a></li>
-                <li><a href="result.php?id=7">家事を頑張った</a></li>
-                <li><a href="result.php?id=8">ダンナ・奥さんがキツイ</a></li>
-                <li><a href="result.php?id=9">料理が下手くそ</a></li>
-                <li><a href="result.php?id=10">彼氏に振られた</a></li>
-                <li><a href="result.php?id=11">彼女に振られた</a></li>
-                <li><a href="result.php?id=12">自分が嫌い</a></li>
-                <li><a href="result.php?id=13">嫌われたかも、、と思ってしまう</a></li>
-                <li><a href="result.php?id=14">人生に絶望している</a></li>
-                <li><a href="result.php?id=15">自分はブサイクだと思っている</a></li>
+                <?php foreach ($admires as $admire) : ?>
+                    <li><a href="result.php?id=<?= h($admire['id']) ?>"><?= h($admire['category']) ?></a></li>
+                <?php endforeach; ?>
+            </ul>
         </aside>
     </div>
-    <footer>
-        <div class="wrapper">
-            <p><small>&copy; 2022 ayakashiwa</small></p>
-        </div>
-    </footer>
 </body>
 
 </html>

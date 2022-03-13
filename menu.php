@@ -9,6 +9,7 @@ $dbh = connect_db();
 <!DOCTYPE html>
 <html lang="ja">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,22 +23,25 @@ $dbh = connect_db();
 </head>
 
 <body>
-    <section class="wrap">
-        <h2 class="wrap-title">このアプリを作ったひと</h2>
-        <img src="https://cdn.stocksnap.io/img-thumbs/960w/beauty-woman_DRZLSHMWEA.jpg" alt="顔写真">
+    <div id="top" class="big-bg">
+        </div>
+        <section class="wrap">
+            <h2 class="wrap-title">このアプリを作ったひと</h2>
+            <img src="https://cdn.stocksnap.io/img-thumbs/960w/beauty-woman_DRZLSHMWEA.jpg" alt="顔写真">
             <div class="infomation">
                 <p>name: ayaka shiwa</p>
                 <p>age : 28</p>
                 <p>work: 地方公務員</p>
                 <p>某市町村で地方公務員として勤務。現在５年目。<br>
                     毎年１名うつ病による休職者を出す超絶ブラック部署に勤務。<br></p>
-                    毎日ストレスを抱える中で、このアプリを発明しました。<br>
-                    仕事中や、ストレスを感じたときにこのアプリが活用されることを<br>
-                    心から祈っています。<br>
-                    みなさんの自己肯定感が爆上がりしますように。</p>
-</div>
-    </section>
-    <a href="index.php" class="btn return-btn">戻る</a>
+                毎日ストレスを抱える中で、このアプリを発明しました。<br>
+                仕事中や、ストレスを感じたときにこのアプリが活用されることを<br>
+                心から祈っています。<br>
+                みなさんの自己肯定感が爆上がりしますように。</p>
+            </div>
+        </section>
+        <a href="index.php" class="btn return-btn">戻る</a>
+
 </body>
 
 </html>
